@@ -30,6 +30,32 @@ public class Calculator
     {
         throw new UnsupportedOperationException("You implement this");
     }
+    /*
+    my code is here
+    
+    public class Main {
+
+    public static void main(String[] args) {
+
+        fibonacci(10);
+
+    }
+    static int[] fibonacci(int n) {
+        int[] F = new int[n];
+        F[0] = 0;
+        F[1] = 1;
+        System.out.println(F[1]);
+        for (int i = 2; i <= 9; i++) {
+            int i2 = i - 2;
+            int i1 = i - 1;
+            F[i] = F[i1] + F[i2];
+            System.out.println(F[i]);
+        }
+        return F;
+    }
+    }
+    
+    */
 
     /**
      * Finds missing integers in the array. Array is supposed to contain subsequent integers with the step of 1.
