@@ -26,13 +26,15 @@ public class Main {
             graf.put(id_, idSoseda);
         }
 
-        public void pathFinder (int startId, int endId){
+        public boolean pathFinder (int startId, int endId){
             Integer a = graf.get(startId);
             System.out.println(startId + "->" + a);
             if (a == endId){
                 System.out.println("done!");
+                return true;
             } else {
                 pathFinder (a, endId);
+                return false;
             }
         }
     }
