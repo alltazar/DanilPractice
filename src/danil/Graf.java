@@ -14,10 +14,11 @@ public class Main {
         graf.setGraf(4,2);
         graf.setGraf(5,3);
 
-        graf.pathFinder(1,3);
+        boolean j = graf.pathFinder(1,3);
+        System.out.println(j);
 
     }
-    
+
     public static class Graf{
 
         public Map<Integer, Integer> graf = new HashMap<>();
@@ -31,10 +32,17 @@ public class Main {
             System.out.println(startId + "->" + a);
             if (a == endId){
                 System.out.println("done!");
-                return true;
+                boolean x = true;
+                return x;
             } else {
+                boolean x = false;
                 pathFinder (a, endId);
-                return false;
+                if (x = !false){
+                    return x;
+                }
+                else {
+                    return false;
+                }
             }
         }
     }
