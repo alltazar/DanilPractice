@@ -14,7 +14,7 @@ public class Main {
         graf.setGraf(4,2);
         graf.setGraf(5,3);
 
-        boolean j = graf.pathFinder(1,3);
+        boolean j = graf.pathFinder(1,9);
         System.out.println(j);
 
     }
@@ -27,23 +27,18 @@ public class Main {
             graf.put(id_, idSoseda);
         }
 
-        public boolean pathFinder (int startId, int endId){
+        public boolean pathFinder (int startId, int endId) {
             Integer a = graf.get(startId);
             System.out.println(startId + "->" + a);
-            if (a == endId){
+            if (a == null){
+                return false;
+            } else if (a == endId) {
                 System.out.println("done!");
                 boolean x = true;
                 return x;
-            } else {
-                boolean x = false;
-                pathFinder (a, endId);
-                if (x = !false){
-                    return x;
-                }
-                else {
-                    return false;
-                }
-            }
+            } else if (a != null) {
+                return pathFinder(a, endId);
+            } else return false;
         }
     }
 
