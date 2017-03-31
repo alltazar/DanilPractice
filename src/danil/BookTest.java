@@ -27,4 +27,15 @@ public class BookTest {
         int[] arr3 = {1,5,2,3,-4,5,3};
         assertEquals(5, Class3103.max(arr3));
     }
+    @Test
+    public void testPrime(){
+        int n = 1;
+        assertEquals(false, Class3103.isPrime(n));
+        int n1 = 2;
+        assertEquals(true, Class3103.isPrime(n1));
+        int n2 = 12;
+        assertEquals(false, Class3103.isPrime(n2));
+        int n3 = 13;
+        assertEquals(true, Class3103.isPrime(n3));
+    }
 }
