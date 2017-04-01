@@ -37,5 +37,13 @@ public class BookTest {
         assertEquals(false, Class3103.isPrime(n2));
         int n3 = 13;
         assertEquals(true, Class3103.isPrime(n3));
+        int n4 = 25;
+        assertEquals(false, Class3103.isPrime(n4));
+        int n5 = 143;
+        assertEquals(false, Class3103.isPrime(n5));
+        int n6 = 79;
+        assertEquals(true, Class3103.isPrime(n6));
+        int n7 = 97;
+        assertEquals(true, Class3103.isPrime(n7));
     }
 }
