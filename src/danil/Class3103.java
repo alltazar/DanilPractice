@@ -36,17 +36,22 @@ public class Class3103 {
 
     public static boolean isPrime(int n)
     {
-        double a = n % 2;
-        double b = n % 3;
+        double a;
+        int b = 0;
         // вернуть true если число n простое, false в противном случае
         if (n < 2) {
             return false;
-        } else if (n == 2) {
-            return true;
-        } else if (a != 0 && b != 0) {
-            return true;
         } else {
-            return false;
+            for (int i = 1; i <= n; i++){
+                a = n % i;
+                if (a == 0) {
+                    b++;
+                }
+            } if (b > 2){
+                return false;
+            } else {
+                return true;
+            }
         }
     }
 }
