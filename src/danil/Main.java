@@ -16,11 +16,6 @@ public class Main {
 
         System.out.println(Circle.squareAll(circle1,circle2,circle3));
 
-        Lines line1 = new Lines(2,6,7,1);
-        Lines line2 = new Lines(2,3,7,8);
-
-        System.out.println(Lines.dot(line1,line2));
-
 
 
 //        Uzel u1 = new Uzel();
