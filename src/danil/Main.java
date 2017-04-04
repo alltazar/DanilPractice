@@ -15,6 +15,11 @@ public class Main {
         Circle circle3 = new Circle(6);
 
         System.out.println(Circle.squareAll(circle1,circle2,circle3));
+        
+        TwoRect twoRect1 = new TwoRect(2,10,7,10);
+        TwoRect twoRect2 = new TwoRect(6,6,4,5);
+
+        System.out.println(TwoRect.checkRect(twoRect1,twoRect2));
 
 
 
