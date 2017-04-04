@@ -14,7 +14,14 @@ public class TwoRect {
     }
 
     public static boolean checkRect (TwoRect r1, TwoRect r2){
-        if (r1.x_ + r1.w_ >= r2.x_ && r1.y_ - r1.h_ <= r2.y_) {
+        if (    (r2.x_ <= r1.x_ && r2.x_ + r2.w_ >= r1.x_ && r2.y_ - r2.h_ <= r1.y_ && r2.y_ >= r1.y_)
+                ||
+                (r1.x_ <= r2.x_ && r1.x_ + r1.w_ >= r2.x_ && r1.y_ <= r2.y_ && r1.y_ >= r2.y_ - r2.h_) 
+                ||
+                (r2.x_ <= r1.x_ && r2.x_ + r2.w_ >= r1.x_ && r2.y_ <= r1.y_ && r2.y_ >= r1.y_ - r1.h_)
+                ||
+                (r2.x_ <= r1.x_ + r1.w_ && r2.x_ >= r1.x_ && r2.y_ >= r1.y_ - r1.h_ && r2.y_ <= r1.y_)
+                ) {
             return true;
         } else {
             return false;
