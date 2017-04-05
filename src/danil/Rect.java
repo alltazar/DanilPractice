@@ -3,7 +3,7 @@ package danil;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rect {
+public class Rect implements IFigure{
     private int h_;
     private int w_;
 
@@ -20,13 +20,14 @@ public class Rect {
         return w_;
     }
 
-    public int square(){
+    @Override
+    public double square(){
         return h_*w_;
     }
 
-    public static int squareAll(Rect... rects){
-        List<Integer> arr = new ArrayList<>();
-        for (Rect r : rects){
+    public static double squareAll(IFigure... rects){
+        List<Double> arr = new ArrayList<>();
+        for (IFigure r : rects){
             arr.add(r.square());
         }
         int allS = 0;
