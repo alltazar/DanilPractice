@@ -15,5 +15,30 @@ public class BinarySearchTest {
 
         Assert.assertEquals(2,BinarySearch.binarySearch(arr1,x1));
 
+        int[] arr2 = {5,15,17,18,21,23,29,32,55,59};
+        int x2 = 17;
+
+        Assert.assertEquals(2,BinarySearch.binarySearch(arr2,x2));
+
+        int[] arr3 = {};
+        int x3 = 17;
+
+        Assert.assertEquals(-1,BinarySearch.binarySearch(arr3,x3));
+
+        int[] arr4 = {2};
+        int x4 = 2;
+
+        Assert.assertEquals(0,BinarySearch.binarySearch(arr4,x4));
+
+        int[] arr5 = {2,4};
+        int x5 = 4;
+
+        Assert.assertEquals(1,BinarySearch.binarySearch(arr5,x5));
+
+        int[] arr6 = {2,4,5};
+        int x6 = 4;
+
+        Assert.assertEquals(1,BinarySearch.binarySearch(arr6,x6));
+
     }
 }
