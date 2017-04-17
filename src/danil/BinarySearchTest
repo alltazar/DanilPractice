@@ -1,0 +1,19 @@
+import org.junit.Assert;
+import org.junit.Test;
+
+public class BinarySearchTest {
+    @Test
+    public void linesTest()
+    {
+        int[] arr = {5,15,18,21,23,29,32,55};
+        int x = 17;
+
+        Assert.assertEquals(-1,BinarySearch.binarySearch(arr,x));
+
+        int[] arr1 = {5,15,17,18,21,23,29,32,55};
+        int x1 = 17;
+
+        Assert.assertEquals(2,BinarySearch.binarySearch(arr1,x1));
+
+    }
+}
