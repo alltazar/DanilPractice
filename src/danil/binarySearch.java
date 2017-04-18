@@ -23,12 +23,15 @@ public class BinarySearch {
                 c = (end+start)/2;
                 break;
             } else if (a[(end+start)/2] > b) {
-                end = ((end+start)/2)-1;
+                end = (end+start)/2 -1;
             } else {
-                start = ((end+start)/2)+1;
+                start = (end+start)/2 +1;
+                if (a[(end+start)/2] == b) {
+                    c = (end + start) / 2;
+                    break;
+                }
             }
         }
 
         return c;
     }
-}
