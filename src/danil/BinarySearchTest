@@ -35,10 +35,15 @@ public class BinarySearchTest {
 
         Assert.assertEquals(1,BinarySearch.binarySearch(arr5,x5));
 
-        int[] arr6 = {2,4,5};
-        int x6 = 4;
+        int[] arr6 = {1,2,3,4,5};
+        int x6 = 5;
 
-        Assert.assertEquals(1,BinarySearch.binarySearch(arr6,x6));
+        Assert.assertEquals(4,BinarySearch.binarySearch(arr6,x6));
+
+        int[] arr7 = {-3,-1,2,3,4,5};
+        int x7 = 5;
+
+        Assert.assertEquals(5,BinarySearch.binarySearch(arr7,x7));
 
     }
 }
