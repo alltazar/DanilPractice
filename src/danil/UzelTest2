@@ -5,6 +5,8 @@ import org.junit.Test;
 
 import java.util.*;
 
+import static java.lang.String.valueOf;
+
 public class UzelTest {
     @Test
     public void uzelTest() {
@@ -21,15 +23,15 @@ public class UzelTest {
         cont.put(4, u4);
         cont.put(5, u5);
 
-        Set<Integer> pass = new HashSet<>();
+        List<Integer> pass = new ArrayList<>();
 
         Assert.assertFalse(Recursice.recursive(cont,1,6, pass));
-        Assert.assertEquals(0,pass.size());
+        Assert.assertTrue(pass.equals(Arrays.asList()));
         pass.clear();
         Assert.assertTrue(Recursice.recursive(cont,1,2, pass));
-        Assert.assertEquals(2,pass.size());
+        Assert.assertTrue(pass.equals(Arrays.asList(1,2)));
         pass.clear();
         Assert.assertTrue(Recursice.recursive(cont,1,5, pass));
-        Assert.assertEquals(5,pass.size());
+        Assert.assertEquals(pass,Arrays.asList(1,2,3,4,5));
     }
 }
