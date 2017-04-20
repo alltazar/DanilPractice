@@ -1,0 +1,17 @@
+package danil;
+
+import java.util.Map;
+
+public class Recursice {
+    public static boolean recursive(Map<Integer, Integer> cont, Integer start, Integer end){
+        if (cont.get(start) == end){
+            return true;
+        } else if (cont.get(start) != null){
+            start = cont.get(start);
+            return recursive(cont, start, end);
+        } else {
+            return false;
+        }
+    }
+
+}
