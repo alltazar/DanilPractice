@@ -1,0 +1,11 @@
+package danil;
+
+public class Uzel {
+    int id_;
+    Integer idSoseda_;
+
+    public Uzel(int id, Integer idSoseda) {
+        id_ = id;
+        idSoseda_ = idSoseda;
+    }
+}
