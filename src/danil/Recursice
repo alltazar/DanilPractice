@@ -1,14 +1,20 @@
 package danil;
 
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Recursice {
-    public static boolean recursive(Map<Integer, Uzel> cont, Integer start, Integer end){
+    public static boolean recursive(Map<Integer, Uzel> cont, Integer start, Integer end, Set<Integer> pass){
         if (cont.get(start).idSoseda_ == end){
+            pass.add(cont.get(start).id_);
+            pass.add(end);
+            System.out.println(pass);
             return true;
         } else if (cont.get(start).idSoseda_ != null){
+            pass.add(cont.get(start).id_);
             start = cont.get(start).idSoseda_;
-            return recursive(cont, start, end);
+            return recursive(cont, start, end, pass);
         } else {
             return false;
         }
