@@ -1,0 +1,29 @@
+package danil;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class UzelTest {
+    @Test
+    public void uzelTest() {
+        Uzel u1 = new Uzel(1, 2);
+        Uzel u2 = new Uzel(2, 3);
+        Uzel u3 = new Uzel(3, 4);
+        Uzel u4 = new Uzel(4, 5);
+        Uzel u5 = new Uzel(5, null);
+
+        Map<Integer, Integer> cont = new HashMap<>();
+        cont.put(u1.id_,u1.idSoseda_);
+        cont.put(u2.id_,u2.idSoseda_);
+        cont.put(u3.id_,u3.idSoseda_);
+        cont.put(u4.id_,u4.idSoseda_);
+        cont.put(u5.id_,u5.idSoseda_);
+
+        Assert.assertFalse(Recursice.recursive(cont,1,6));
+        Assert.assertTrue(Recursice.recursive(cont,1,2));
+        Assert.assertTrue(Recursice.recursive(cont,1,3));
+    }
+}
