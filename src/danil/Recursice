@@ -1,11 +1,10 @@
 package danil;
 
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
 
 public class Recursice {
-    public static boolean recursive(Map<Integer, Uzel> cont, Integer start, Integer end, Set<Integer> pass){
+    public static boolean recursive(Map<Integer, Uzel> cont, Integer start, Integer end, List<Integer> pass){
         if (cont.get(start).idSoseda_ == end){
             pass.add(cont.get(start).id_);
             pass.add(end);
