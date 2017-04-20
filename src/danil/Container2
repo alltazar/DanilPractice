@@ -1,0 +1,12 @@
+package danil;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Container {
+    Map<Integer, Integer> cont = new HashMap<>();
+
+    public void setCont(Uzel u) {
+        cont.put(u.id_,u.idSoseda_);
+    }
+}
