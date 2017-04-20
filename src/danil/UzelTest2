@@ -24,9 +24,12 @@ public class UzelTest {
         Set<Integer> pass = new HashSet<>();
 
         Assert.assertFalse(Recursice.recursive(cont,1,6, pass));
+        Assert.assertEquals(0,pass.size());
         pass.clear();
         Assert.assertTrue(Recursice.recursive(cont,1,2, pass));
+        Assert.assertEquals(2,pass.size());
         pass.clear();
         Assert.assertTrue(Recursice.recursive(cont,1,5, pass));
+        Assert.assertEquals(5,pass.size());
     }
 }
