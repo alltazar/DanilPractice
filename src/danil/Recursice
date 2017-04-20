@@ -3,11 +3,11 @@ package danil;
 import java.util.Map;
 
 public class Recursice {
-    public static boolean recursive(Map<Integer, Integer> cont, Integer start, Integer end){
-        if (cont.get(start) == end){
+    public static boolean recursive(Map<Integer, Uzel> cont, Integer start, Integer end){
+        if (cont.get(start).idSoseda_ == end){
             return true;
-        } else if (cont.get(start) != null){
-            start = cont.get(start);
+        } else if (cont.get(start).idSoseda_ != null){
+            start = cont.get(start).idSoseda_;
             return recursive(cont, start, end);
         } else {
             return false;
