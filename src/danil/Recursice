@@ -16,6 +16,7 @@ public class Recursice {
             start = cont.get(start).idSoseda_;
             return recursive(cont, start, end, pass);
         } else {
+            pass.clear();
             return false;
         }
     }
