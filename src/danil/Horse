@@ -1,0 +1,58 @@
+package danil;
+
+import java.util.Set;
+
+public class Horse {
+    int x_max = 7;
+    int y_max = 7;
+    int x_min = 0;
+    int y_min = 0;
+
+    public int pass(int[][] arr, int x, int y){
+        arr[x][y] = 1;
+        if ((x_min <= x+1 && x+1 <= x_max && y_min <= y+2 && y+2 <= y_max) && arr[x+1][y+2] != 1){
+            arr[x+1][y+2] = 1;
+            x = x +1;
+            y = y +2;
+        } else if ((x_min <= x+2 && x+2 <= x_max && y_min <= y+1 && y+1 <= y_max) && arr[x+2][y+1] != 1){
+            arr[x+2][y+1] = 1;
+            x = x +2;
+            y = y +1;
+            //return pass(arr, x, y);
+        } else if ((x_min <= x+2 && x+2 <= x_max && y_min <= y-1 && y-1 <= y_max) && arr[x+2][y-1] != 1){
+            arr[x+2][y-1] = 1;
+            x = x +2;
+            y = y-1;
+            //return pass(arr, x, y);
+        } else if ((x_min <= x-2 && x-2 <= x_max && y_min <= y-1 && y-1 <= y_max) && arr[x-2][y-1] != 1){
+            arr[x-2][y-1] = 1;
+            x = x -2;
+            y = y-1;
+            //return pass(arr, x, y);
+        } else if ((x_min <= x-1 && x-1 <= x_max && y_min <= y-2 && y-2 <= y_max) && arr[x-1][y-2] != 1){
+            arr[x-1][y-2] = 1;
+            x = x -1;
+            y = y -2;
+            //return pass(arr, x, y);
+        } else if ((x_min <= x-2 && x-2 <= x_max && y_min <= y+1 && y+1 <= y_max) && arr[x-2][y+1] != 1){
+            arr[x-2][y+1] = 1;
+            x = x -2;
+            y = y +1;
+            //return pass(arr, x, y);
+        } else if ((x_min <= x+1 && x+1 <= x_max && y_min <= y-2 && y-2 <= y_max) && arr[x+1][y-2] != 1){
+            arr[x+1][y-2] = 1;
+            x = x +1;
+            y = y -2;
+            //return pass(arr, x, y);
+        } else if ((x_min <= x-1 && x-1 <= x_max && y_min <= y+2 && y+2 <= y_max) && arr[x-1][y+2] != 1){
+            arr[x-1][y+2] = 1;
+            x = x -1;
+            y = y +2;
+            //return pass(arr, x, y);
+        } else {
+            return arr.length;
+        }
+
+        return pass(arr, x, y);
+    }
+}
