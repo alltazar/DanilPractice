@@ -1,0 +1,38 @@
+package danil;
+
+public class MyHashMap {
+
+    Para[] cont = new Para[8];
+
+    public void set(Object key, int value){
+        double hash = key.toString().length() * 0.63 * 10000;
+        int index = (int) hash % cont.length;
+        cont[index] = new Para(key,value);
+    }
+
+    class Para{
+
+        Object key;
+        int value;
+
+        Para(Object key, int value){
+        this.key = key;
+        this.value = value;
+        }
+
+        int getValue(){
+            return value;
+        }
+    }
+
+    public int get(Object key){
+        double hash = key.toString().length() * 0.63 * 10000;
+        int index = (int) hash % cont.length;
+        return cont[index].getValue();
+    }
+
+    double hashCode(Object o){
+        double hash = o.toString().length() * 0.63 * 10000;
+        return hash;
+    }
+}
