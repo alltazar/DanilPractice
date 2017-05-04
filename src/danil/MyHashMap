@@ -1,13 +1,28 @@
 package danil;
 
-public class MyHashMap {
+import static java.lang.Math.abs;
 
-    Para[] cont = new Para[8];
+public class MyHashMap {
+    Object[] map = new Object[8];
+    Para[] pary = new Para[1];
 
     public void set(Object key, int value){
-        double hash = key.toString().length() * 0.63 * 10000;
-        int index = (int) hash % cont.length;
-        cont[index] = new Para(key,value);
+        int index = abs(key.hashCode()) % map.length;
+        if (map[index] == null) {
+            map[index] = pary;
+            pary[0] = new Para(key, value);
+        } else {
+            map[index] = pary;
+            Para[] pary2 = new Para[pary.length+1];
+            for (int i = 0; i < pary.length +1; i++){
+                pary2[i] = pary[i];
+            }
+            pary = pary2;
+        }
+    }
+
+    class Map{
+        Para[] pary = new Para[1];
     }
 
     class Para{
@@ -25,14 +40,15 @@ public class MyHashMap {
         }
     }
 
-    public int get(Object key){
-        double hash = key.toString().length() * 0.63 * 10000;
-        int index = (int) hash % cont.length;
-        return cont[index].getValue();
-    }
-
-    double hashCode(Object o){
-        double hash = o.toString().length() * 0.63 * 10000;
-        return hash;
+    public Integer get(Object key){
+        int index = abs(key.hashCode()) % map.length;
+        pary = (Para[]) map[index];
+        Integer in = null;
+        for (int i=0; i< pary.length; i++){
+            if (pary[i].key == key){
+                in = pary[i].getValue();
+            }
+        }
+        return in;
     }
 }
