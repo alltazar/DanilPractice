@@ -3,9 +3,9 @@ package danil;
 import static java.lang.Math.abs;
 
 public class MyHashMap {
+    Object[] map = new Object[8];
 
     void set(Object key, int value){
-       Object[] map = new Object[8];
        Pair pair = new Pair(key,value);
        Bucket bucket = new Bucket();
        bucket.setPair(pair);
