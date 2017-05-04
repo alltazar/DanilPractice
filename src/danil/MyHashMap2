@@ -1,0 +1,62 @@
+package danil;
+
+import static java.lang.Math.abs;
+
+public class MyHashMap {
+
+    void set(Object key, int value){
+       Object[] map = new Object[8];
+       Pair pair = new Pair(key,value);
+       Bucket bucket = new Bucket();
+       bucket.setPair(pair);
+       int index = abs(key.hashCode()) % map.length;
+       map[index] = bucket.pairs_;
+    }
+
+    int get(Object key){
+        int index = abs(key.hashCode()) % map.length;
+        Bucket bucket = new Bucket();
+        map[index];
+    }
+
+    class Bucket {
+        Object[] pairs_ = new Object[12];
+        Pair pair;
+
+        void setPair(Pair pair) {
+            for (int i = 0; i < pairs_.length; i++) {
+                if (pairs_[i] == null) {
+                    pairs_[i] = pair;
+                    break;
+                }
+            }
+        }
+
+        Object getPairKey(Pair pair) {
+            Object o = null;
+            for (int i = 0; i < pairs_.length; i++) {
+                if (pairs_[i] != null && pair.key == this.pair.key) {
+                    o = pairs_[i];
+                }
+            }
+            return o;
+        }
+    }
+
+
+
+    class Pair{
+
+        Object key;
+        int value;
+
+        Pair(Object key, int value){
+        this.key = key;
+        this.value = value;
+        }
+
+        int getValue(){
+            return value;
+        }
+    }
+}
