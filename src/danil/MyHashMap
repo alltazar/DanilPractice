@@ -3,45 +3,60 @@ package danil;
 import static java.lang.Math.abs;
 
 public class MyHashMap {
-    Object[] map = new Object[8];
+    Bucket[] map = new Bucket[8];
 
     void set(Object key, int value){
-        Pair p = new Pair(key, value);
-        Bucket b = new Bucket();
-        b.setPair(p);
-        int index = abs(key.hashCode()) % map.length;
-        map[index] = b.pair_;
+       Pair pair = new Pair(key,value);
+       int index = abs(key.hashCode()) % map.length;
+       if (map[index] == null) {
+           Bucket bucket = new Bucket();
+           bucket.pairs_ = new Pair[12];
+           bucket.setPair(pair);
+           map[index] = bucket;
+       } else {
+           for (int i=0; i<map[index].pairs_.length; i++){
+               if (map[index].pairs_[i] == null){
+                   map[index].pairs_[i] = pair;
+                   break;
+               }
+           }
+       }
     }
 
     Integer get(Object key){
         int index = abs(key.hashCode()) % map.length;
-        Bucket b = new Bucket();
-        b.pair_ = (Object[]) map[index];
         Integer in = null;
-        for (int i=0; i< b.pair_.length; i++){
-            Pair p = (Pair) b.pair_[i];
-            if (p.key == key) in = p.value;
-            break;
-        }
-        return in;
+        for (int i=0; i<map[index].pairs_.length; i++){
+            if (map[index].pairs_[i] != null && map[index].pairs_[i].key == key){
+                in = map[index].pairs_[i].value;
+                break;
+                } else {
+                    in = null;
+                }
+        } return in;
     }
 
-    class Bucket{
-        Object[] pair_ = new Object[8];
+    class Bucket {
+        Pair[] pairs_;
 
-        void setPair(Pair pair){
-            for (int i = 0; i < pair_.length; i++) {
-                if (pair_[i] == null){
-                    pair_[i] = pair;
+        void setPair(Pair pair) {
+            for (int i = 0; i < pairs_.length; i++) {
+                if (pairs_[i] == null) {
+                    pairs_[i] = pair;
                     break;
                 }
             }
         }
 
-        Object getPair(int i){
-            return pair_[i];
-        }
-
+//        Object getPairKey(Pair pair) {
+//            Object o = null;
+//            for (int i = 0; i < pairs_.length; i++) {
+//                if (pairs_[i] != null && pair.key == this.pairs_[i].key) {
+//                    o = pairs_[i];
+//                }
+//            }
+//            return o;
+//        }
     }
 
     class Pair{
