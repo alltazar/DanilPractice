@@ -10,10 +10,14 @@ public class MyHashMap {
        int index = abs(key.hashCode()) % map.length;
        if (map[index] == null) {
            Bucket bucket = new Bucket();
-           bucket.pairs_ = new Pair[12];
+           bucket.pairs_ = new Pair[1];
            bucket.setPair(pair);
            map[index] = bucket;
        } else {
+           int newLength = map[index].pairs_.length + 1;
+           Pair[] newPairs_ = new Pair[newLength];
+           System.arraycopy(map[index].pairs_,0,newPairs_,0,map[index].pairs_.length);
+           map[index].pairs_ = newPairs_;
            for (int i=0; i<map[index].pairs_.length; i++){
                if (map[index].pairs_[i] == null){
                    map[index].pairs_[i] = pair;
