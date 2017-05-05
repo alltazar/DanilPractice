@@ -30,5 +30,8 @@ public class MyHashMapTest {
         Assert.assertEquals(i, map.get("aaaaaassasd"));
         i = 333;
         Assert.assertEquals(i, map.get("rrrrrrr"));
+
+        Assert.assertNull(map.get("NULL"));
+        Assert.assertNull(map.get("Я-БА-ДА-БА-Д-У-У-У-У"));
     }
 }
