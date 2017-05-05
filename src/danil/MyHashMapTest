@@ -1,0 +1,34 @@
+package danil;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class MyHashMapTest {
+    @Test
+    public void test(){
+        MyHashMap map = new MyHashMap();
+        map.set("Str2344",4);
+        map.set("Sbbbbbb4",5);
+        map.set("Saaaaa4",6);
+        map.set("Strcsd2344",7);
+        map.set("Str4",8);
+        Integer i = 6;
+        Assert.assertEquals(i, map.get("Saaaaa4"));
+        i = 4;
+        Assert.assertEquals(i, map.get("Str2344"));
+        i = 7;
+        Assert.assertEquals(i, map.get("Strcsd2344"));
+
+        map.set("aaaaaassasd",45);
+        map.set("yyyyyyyrty",567);
+        map.set("vrsrsrsvvsvhrv",44);
+        map.set("rrrrrrr",333);
+        map.set("ttttttttt",222);
+        i = 6;
+        Assert.assertEquals(i, map.get("Saaaaa4"));
+        i = 45;
+        Assert.assertEquals(i, map.get("aaaaaassasd"));
+        i = 333;
+        Assert.assertEquals(i, map.get("rrrrrrr"));
+    }
+}
