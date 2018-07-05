@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+
+public class RedoUndo {
+
+    private static Items shape_;
+
+    public void unDo(SwingTest.DataModel data){
+
+        ArrayList<Items> s = data.getAllShapes();
+
+        if (shape_ == null || !shape_.equals(s.get(s.size() - 1))){
+            shape_ = s.get(s.size() - 1);
+            data.unDo();
+        }
+    }
+
+    public void reDo(SwingTest.DataModel data){
+        if (shape_ != null){
+            data.reDo(shape_);
+            shape_ = null;
+        }
+    }
+
+}
