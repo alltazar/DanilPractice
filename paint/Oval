@@ -1,0 +1,74 @@
+import java.awt.*;
+
+public class Oval extends Shape {
+
+//        private int x_;
+//        private int y_;
+//        private int dx_;
+//        private int dy_;
+//        private Color color_;
+
+        Oval(){
+            color_ = new Color(000000);
+        }
+
+//        public int getX()
+//        {
+//            return x_;
+//        }
+//
+//        public void setX(int x)
+//        {
+//            x_ = x;
+//        }
+//
+//        public int getY()
+//        {
+//            return y_;
+//        }
+//
+//        public void setY(int y)
+//        {
+//            y_ = y;
+//        }
+//
+//        public int getDX()
+//        {
+//            return dx_;
+//        }
+//
+//        public void setDX(int dx)
+//        {
+//            dx_ = dx;
+//        }
+//
+//        public int getDY()
+//        {
+//            return dy_;
+//        }
+//
+//        public void setDY(int dy)
+//        {
+//            dy_ = dy;
+//        }
+//
+//        public Color getColor()
+//        {
+//            return color_;
+//        }
+//
+//        public void setColor(Color c)
+//        {
+//            color_ = c;
+//        }
+
+        public void paint(Graphics g, Items s){
+            g.setColor(s.getColor());
+            g.fillOval(x_,y_,dx_ - x_, dy_ - y_);
+        }
+
+        @Override
+        public Shape newInstance() {
+            return new Oval();
+        }
+    }
